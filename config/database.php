@@ -1,7 +1,6 @@
 <?php
 // config/database.php
-class DatabaseUsers
-{
+class Database {
     private $host = '160.19.166.42';
     private $db_name = '2B_klp2';
     private $username = '2B_klp2';
