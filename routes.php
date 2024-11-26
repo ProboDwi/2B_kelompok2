@@ -3,25 +3,25 @@
 
 require_once 'app/controllers/CategoriesController.php';
 
-$controller = new CategoriesController();
+$categoriescontroller = new CategoriesController();
 $url = $_SERVER['REQUEST_URI'];
 $requestMethod = $_SERVER['REQUEST_METHOD'];
 
 if ($url == '/categories/index' || $url == '/') {
-    $controller->index();
+    $categoriescontroller->index();
 } elseif ($url == '/categories/create' && $requestMethod == 'GET') {
-    $controller->create();
+    $categoriescontroller->create();
 } elseif ($url == '/categories/store' && $requestMethod == 'POST') {
-    $controller->store();
+    $categoriescontroller->store();
 } elseif (preg_match('/\/categories\/edit\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
     $userId = $matches[1];
-    $controller->edit($userId);
+    $categoriescontroller->edit($userId);
 } elseif (preg_match('/\/categories\/update\/(\d+)/', $url, $matches) && $requestMethod == 'POST') {
     $userId = $matches[1];
-    $controller->update($userId, $_POST);
+    $categoriescontroller->update($userId, $_POST);
 } elseif (preg_match('/\/categories\/delete\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
     $userId = $matches[1];
-    $controller->delete($userId);
+    $categoriescontroller->delete($userId);
 } else {
     http_response_code(404);
     echo "404 Not Found";
