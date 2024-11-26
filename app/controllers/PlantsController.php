@@ -2,11 +2,11 @@
 // app/controllers/UserController.php
 require_once '../app/models/Plants.php';
 
-class UserController {
+class PlantsController {
     private $userModel;
 
     public function __construct() {
-        $this->userModel = new User();
+        $this->userModel = new Plants();
     }
 
     public function index() {

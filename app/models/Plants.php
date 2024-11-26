@@ -2,7 +2,7 @@
 // app/models/User.php
 require_once '../config/database.php';
 
-class User {
+class Plants {
     private $db;
 
     public function __construct() {

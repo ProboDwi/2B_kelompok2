@@ -3,7 +3,7 @@
 
 require_once 'app/controllers/PlantsController.php';
 
-$controller = new UserController();
+$controller = new PlantsController();
 $url = $_SERVER['REQUEST_URI'];
 $requestMethod = $_SERVER['REQUEST_METHOD'];
 
