@@ -1,6 +1,6 @@
 <!-- app/views/user/create.php -->
 <h2>Tambah Tanaman Baru</h2>
-<form action="/user/store" method="POST">
+<form action="/plants/store" method="POST">
     <label for="nama_tanaman">Nama Tanaman:</label>
     <input type="varchar" name="nama_tanaman" id="nama_tanaman" required>
     <br>

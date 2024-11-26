@@ -7,7 +7,7 @@
 </head>
 <body>
     <h2>Edit Tanaman</h2>
-    <form action="/user/update/<?php echo $user['id_plants']; ?>" method="POST">
+    <form action="/plants/update/<?php echo $user['id_plants']; ?>" method="POST">
         <label for="nama_tanaman">Nama Tanaman:</label>
         <input type="varchar" id="nama_tanaman" name="nama_tanaman" value="<?php echo $user['nama_tanaman']; ?>" required>
         <br>
@@ -25,6 +25,6 @@
         <br>
         <button type="submit">Update</button>
     </form>
-    <a href="/user/index">Back to List</a>
+    <a href="/plants/index">Back to List</a>
 </body>
 </html>
