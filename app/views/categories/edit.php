@@ -1,4 +1,7 @@
 <!-- app/views/user/edit.php -->
+<?php require_once '../public/library/header.php'; ?>
+<?php require_once '../public/library/navbar.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,3 +22,5 @@
     <a href="/categories/index">Back to List</a>
 </body>
 </html>
+
+<?php require_once '../public/library/footer.php'; ?>

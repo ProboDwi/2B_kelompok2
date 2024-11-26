@@ -5,16 +5,21 @@ require_once 'app/controllers/CategoriesController.php';
 require_once 'app/controllers/OrdersController.php';
 require_once 'app/controllers/PlantsController.php';
 require_once 'app/controllers/UserController.php';
+require_once 'app/controllers/HomeController.php';
 
 $plantscontroller = new PlantsController();
 $usercontroller = new UserController();
 $orderscontroller = new OrdersController();
 $categoriescontroller = new CategoriesController();
+$homecontroller = new HomeController();
 
 $url = $_SERVER['REQUEST_URI'];
 $requestMethod = $_SERVER['REQUEST_METHOD'];
 
-if ($url == '/categories/index' || $url == '/') {
+if ($url == '/home/index' || $url == '/') {
+    $homecontroller->index();
+}
+elseif ($url == '/categories/index' || $url == '/') {
     $categoriescontroller->index();
 } elseif ($url == '/categories/create' && $requestMethod == 'GET') {
     $categoriescontroller->create();
