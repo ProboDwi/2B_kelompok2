@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Edit User</title>
+    <title>Edit Tanaman</title>
 </head>
 <body>
     <h2>Edit Tanaman</h2>
