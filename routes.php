@@ -3,25 +3,25 @@
 
 require_once 'app/controllers/UserController.php';
 
-$controller = new UserController();
+$usercontroller = new UserController();
 $url = $_SERVER['REQUEST_URI'];
 $requestMethod = $_SERVER['REQUEST_METHOD'];
 
 if ($url == '/user/index' || $url == '/') {
-    $controller->index();
+    $usercontroller->index();
 } elseif ($url == '/user/create' && $requestMethod == 'GET') {
-    $controller->create();
+    $usercontroller->create();
 } elseif ($url == '/user/store' && $requestMethod == 'POST') {
-    $controller->store();
+    $usercontroller->store();
 } elseif (preg_match('/\/user\/edit\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
     $userId = $matches[1];
-    $controller->edit($userId);
+    $usercontroller->edit($userId);
 } elseif (preg_match('/\/user\/update\/(\d+)/', $url, $matches) && $requestMethod == 'POST') {
     $userId = $matches[1];
-    $controller->update($userId, $_POST);
+    $usercontroller->update($userId, $_POST);
 } elseif (preg_match('/\/user\/delete\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
     $userId = $matches[1];
-    $controller->delete($userId);
+    $usercontroller->delete($userId);
 } else {
     http_response_code(404);
     echo "404 Not Found";
