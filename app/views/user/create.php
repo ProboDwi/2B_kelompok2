@@ -4,6 +4,7 @@
     <label for="nama_tanaman">Nama Tanaman:</label>
     <input type="varchar" name="nama_tanaman" id="nama_tanaman" required>
     <br>
+    <p>test</p>
     <label for="kategori">Kategori:</label>
     <input type="varchar" name="kategori" id="kategori" required>
     <br>
