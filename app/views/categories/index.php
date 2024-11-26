@@ -1,4 +1,7 @@
 <!-- app/views/user/index.php -->
+<?php require_once '../public/library/header.php'; ?>
+<?php require_once '../public/library/navbar.php'; ?>
+
 <h2>Daftar Kategori</h2>
 <a href="/categories/create">Tambah Kategori</a>
 <ul>
@@ -11,3 +14,5 @@
         </div>
     <?php endforeach; ?>
 </ul>
+
+<?php require_once '../public/library/footer.php'; ?>

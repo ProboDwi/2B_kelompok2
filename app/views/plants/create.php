@@ -1,4 +1,7 @@
 <!-- app/views/user/create.php -->
+<?php require_once '../public/library/header.php'; ?>
+<?php require_once '../public/library/navbar.php'; ?>
+
 <h2>Tambah Tanaman Baru</h2>
 <form action="/plants/store" method="POST">
     <label for="nama_tanaman">Nama Tanaman:</label>
@@ -18,3 +21,5 @@
     <br>
     <button type="submit">Simpan</button>
 </form>
+
+<?php require_once '../public/library/footer.php'; ?>

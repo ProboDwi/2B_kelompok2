@@ -1,4 +1,7 @@
 <!-- app/views/user/index.php -->
+<?php require_once '../public/library/header.php'; ?>
+<?php require_once '../public/library/navbar.php'; ?>
+
 <h2>Daftar Tanaman</h2>
 <a href="/plants/create">Tambah Tanaman Baru</a>
 <ul>
@@ -15,3 +18,5 @@
         </div>
     <?php endforeach; ?>
 </ul>
+
+<?php require_once '../public/library/footer.php'; ?>
