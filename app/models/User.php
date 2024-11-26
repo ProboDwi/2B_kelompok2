@@ -6,7 +6,7 @@ class User {
     private $db;
 
     public function __construct() {
-        $this->db = (new Database())->connect();
+        $this->db = (new DatabaseUsers())->connect();
     }
 
     public function getAllUsers() {
