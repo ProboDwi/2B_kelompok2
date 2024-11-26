@@ -1,15 +1,37 @@
 <?php
 // routes.php
 
+require_once 'app/controllers/CategoriesController.php';
 require_once 'app/controllers/OrdersController.php';
 require_once 'app/controllers/PlantsController.php';
 require_once 'app/controllers/UserController.php';
 
+$plantscontroller = new PlantsController();
+$usercontroller = new UserController();
 $orderscontroller = new OrdersController();
+$categoriescontroller = new CategoriesController();
+
 $url = $_SERVER['REQUEST_URI'];
 $requestMethod = $_SERVER['REQUEST_METHOD'];
 
-if ($url == '/orders/index' || $url == '/') {
+if ($url == '/categories/index' || $url == '/') {
+    $categoriescontroller->index();
+} elseif ($url == '/categories/create' && $requestMethod == 'GET') {
+    $categoriescontroller->create();
+} elseif ($url == '/categories/store' && $requestMethod == 'POST') {
+    $categoriescontroller->store();
+} elseif (preg_match('/\/categories\/edit\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
+    $userId = $matches[1];
+    $categoriescontroller->edit($userId);
+} elseif (preg_match('/\/categories\/update\/(\d+)/', $url, $matches) && $requestMethod == 'POST') {
+    $userId = $matches[1];
+    $categoriescontroller->update($userId, $_POST);
+} elseif (preg_match('/\/categories\/delete\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
+    $userId = $matches[1];
+    $categoriescontroller->delete($userId);
+}
+
+  elseif ($url == '/orders/index' || $url == '/') {
     $orderscontroller->index();
 } elseif ($url == '/orders/create' && $requestMethod == 'GET') {
     $orderscontroller->create();
@@ -27,38 +49,38 @@ if ($url == '/orders/index' || $url == '/') {
 }
 
   elseif ($url == '/plants/index' || $url == '/') {
-    $controller->index();
+    $plantscontroller->index();
 } elseif ($url == '/plants/create' && $requestMethod == 'GET') {
-    $controller->create();
+    $plantscontroller->create();
 } elseif ($url == '/plants/store' && $requestMethod == 'POST') {
-    $controller->store();
+    $plantscontroller->store();
 } elseif (preg_match('/\/plants\/edit\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
     $userId = $matches[1];
-    $controller->edit($userId);
+    $plantscontroller->edit($userId);
 } elseif (preg_match('/\/plants\/update\/(\d+)/', $url, $matches) && $requestMethod == 'POST') {
     $userId = $matches[1];
-    $controller->update($userId, $_POST);
+    $plantscontroller->update($userId, $_POST);
 } elseif (preg_match('/\/plants\/delete\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
     $userId = $matches[1];
-    $controller->delete($userId);
+    $plantscontroller->delete($userId);
 } 
 
 
   elseif ($url == '/user/index' || $url == '/') {
-    $controller->index();
+    $usercontroller->index();
 } elseif ($url == '/user/create' && $requestMethod == 'GET') {
-    $controller->create();
+    $usercontroller->create();
 } elseif ($url == '/user/store' && $requestMethod == 'POST') {
-    $controller->store();
+    $usercontroller->store();
 } elseif (preg_match('/\/user\/edit\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
     $userId = $matches[1];
-    $controller->edit($userId);
+    $usercontroller->edit($userId);
 } elseif (preg_match('/\/user\/update\/(\d+)/', $url, $matches) && $requestMethod == 'POST') {
     $userId = $matches[1];
-    $controller->update($userId, $_POST);
+    $usercontroller->update($userId, $_POST);
 } elseif (preg_match('/\/user\/delete\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
     $userId = $matches[1];
-    $orderscontroller->delete($userId);
+    $usercontroller->delete($userId);
 } else {
     http_response_code(404);
     echo "404 Not Found";
