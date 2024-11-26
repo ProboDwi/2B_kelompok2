@@ -1,5 +1,5 @@
 <!-- app/views/user/index.php -->
-<h2>Daftar Pengguna</h2>
+<h2>Daftar Pengguna Jual Beli Tanaman Hias</h2>
 <a href="/user/create">Tambah Pengguna Baru</a>
 <ul>
     <?php foreach ($users as $user): ?>
