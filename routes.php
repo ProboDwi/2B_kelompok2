@@ -2,6 +2,7 @@
 // routes.php
 
 require_once 'app/controllers/PlantsController.php';
+require_once 'app/controllers/UserController.php';
 
 $plantscontroller = new PlantsController();
 $url = $_SERVER['REQUEST_URI'];
@@ -20,6 +21,24 @@ if ($url == '/plants/index' || $url == '/') {
     $userId = $matches[1];
     $plantscontroller->update($userId, $_POST);
 } elseif (preg_match('/\/plants\/delete\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
+    $userId = $matches[1];
+    $plantscontroller->delete($userId);
+} 
+
+
+  elseif ($url == '/user/index' || $url == '/') {
+    $controller->index();
+} elseif ($url == '/user/create' && $requestMethod == 'GET') {
+    $controller->create();
+} elseif ($url == '/user/store' && $requestMethod == 'POST') {
+    $controller->store();
+} elseif (preg_match('/\/user\/edit\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
+    $userId = $matches[1];
+    $controller->edit($userId);
+} elseif (preg_match('/\/user\/update\/(\d+)/', $url, $matches) && $requestMethod == 'POST') {
+    $userId = $matches[1];
+    $controller->update($userId, $_POST);
+} elseif (preg_match('/\/user\/delete\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
     $userId = $matches[1];
     $plantscontroller->delete($userId);
 } else {
