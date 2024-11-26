@@ -6,7 +6,7 @@ class Plants {
     private $db;
 
     public function __construct() {
-        $this->db = (new DatabasePlants())->connect();
+        $this->db = (new Database())->connect();
     }
 
     public function getAllUsers() {
