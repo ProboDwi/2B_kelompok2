@@ -18,7 +18,7 @@
 
                             <div class="form-group">
                                 <label for="deskripsi">Deskripsi</label>
-                                <input type="deskripsi" name="deskripsi" id="deskripsi" value="<?php echo $user['deskripsi']; ?>" class="form-control" required>
+                                <input type="text" name="deskripsi" id="deskripsi" value="<?php echo $user['deskripsi']; ?>" class="form-control" required>
                             </div><br>
 
                             <button type="submit" class="btn btn-success">UPDATE</button>
