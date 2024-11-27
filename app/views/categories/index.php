@@ -26,8 +26,8 @@
                                         <td><?= htmlspecialchars($user['nama_kategori']) ?></td>
                                         <td><?= htmlspecialchars($user['deskripsi']) ?></td>
                                         <td class="text-center">
-                                            <a href="/user/edit/<?php echo $user['id_users']; ?>" class="btn btn-sm btn-warning">Edit</a>
-                                            <a href="/user/delete/<?php echo $user['id_users']; ?>" onclick="return confirm('Are you sure?')" class="btn btn-sm btn-danger">Delete</a>
+                                            <a href="/categories/edit/<?php echo $user['id_categories']; ?>" class="btn btn-sm btn-warning">Edit</a>
+                                            <a href="/categories/delete/<?php echo $user['id_categories']; ?>" onclick="return confirm('Are you sure?')" class="btn btn-sm btn-danger">Delete</a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
