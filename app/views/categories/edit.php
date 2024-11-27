@@ -22,7 +22,7 @@
                             </div><br>
 
                             <button type="submit" class="btn btn-success">UPDATE</button>
-                            <a class="btn btn-primary" href="/user/index" role="button">KEMBALI</a>
+                            <a class="btn btn-primary" href="/categories/index" role="button">KEMBALI</a>
 
                         </form>
                     </div>

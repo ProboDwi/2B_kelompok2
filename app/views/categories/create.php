@@ -9,7 +9,7 @@
             <div class="card">
                 <div class="card-header">Tambah Kategori Baru</div>
                     <div class="card-body">
-                        <form action="/user/store" method="POST">
+                        <form action="/categories/store" method="POST">
 
                             <div class="form-group">
                                 <label for="nama_kategori">Nama Kategori</label>
