@@ -9,7 +9,7 @@
             <div class="card">
                 <div class="card-header">Edit Kategori</div>
                     <div class="card-body">
-                        <form action="/categories/update/<?php echo $user['id_users']; ?>" method="POST">
+                        <form action="/categories/update/<?php echo $user['id_categories']; ?>" method="POST">
 
                             <div class="form-group">
                                 <label for="nama_kategori">Nama Kategori</label>
