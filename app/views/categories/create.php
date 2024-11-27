@@ -23,7 +23,7 @@
 
                             <button type="submit" class="btn btn-success">SIMPAN</button>
                             <button type="reset" class="btn btn-warning">RESET</button>
-                            <a class="btn btn-primary" href="/user/index" role="button">KEMBALI</a>
+                            <a class="btn btn-primary" href="/categories/index" role="button">KEMBALI</a>
 
                         </form>
                     </div>

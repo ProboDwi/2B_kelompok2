@@ -8,7 +8,7 @@
             <div class="card">
                 <div class="card-header">Kategori Pengguna</div>
                     <div class="card-body">
-                        <a href="/user/create" class="btn btn-md btn-success" style="margin-bottom: 10px">Tambah Kategori Baru</a>
+                        <a href="/categories/create" class="btn btn-md btn-success" style="margin-bottom: 10px">Tambah Kategori Baru</a>
                         <table class="table table-bordered" id="myTable">
                             <thead>
                                 <tr>
