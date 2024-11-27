@@ -1,3 +1,5 @@
+<?php require_once '../public/library/header.php'; ?>
+
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
