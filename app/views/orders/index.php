@@ -41,6 +41,8 @@
                 </div>
             </div>
         </div>
+    </div>
+
 
 
 <?php require_once '../public/library/footer.php'; ?>

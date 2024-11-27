@@ -40,6 +40,7 @@
                 </div>
             </div>
         </div>
+    </div>
 
         <!-- Sweetalert Start -->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -69,5 +70,5 @@
         </script>
         <!-- Sweetalert End -->
 
-
+    
 <?php require_once '../public/library/footer.php'; ?>
