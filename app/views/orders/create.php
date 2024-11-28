@@ -12,18 +12,38 @@
 
                             <div class="form-group">
                                 <label for="tanaman_yang_dipesan">Tanaman Yang Dipesan</label>
-                                <input type="text" name="tanaman_yang_dipesan" id="tanaman_yang_dipesan" class="form-control" required>
+                                <div>
+                                    <select id="select" name="tanaman_yang_dipesan" style="width: 100%" required>
+                                    <option value="" selected disabled>Pilih Tanaman</option>
+
+                                        <?php foreach ($plants as $data): ?>
+                                            <option value="<?= htmlspecialchars($data['id_plants']) ?>">
+                                                <?= htmlspecialchars($data['nama_tanaman']) ?>
+                                            </option>
+                                        <?php endforeach; ?>
+                                    </select><br><br>
+                                </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="pembeli">Pembeli</label>
-                                <input type="text" name="pembeli" id="pembeli" class="form-control" required>
+                                <div>
+                                    <select id="select1" name="pembeli" style="width: 100%" required>
+                                    <option value="" selected disabled>Pilih Pembeli</option>
+
+                                        <?php foreach ($users as $data): ?>
+                                            <option value="<?= htmlspecialchars($data['id_users']) ?>">
+                                                <?= htmlspecialchars($data['nama']) ?>
+                                            </option>
+                                        <?php endforeach; ?>
+                                    </select><br><br>
+                                </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="status_pesanan">Status Pesanan</label>
                                 <input type="text" name="status_pesanan" id="status_pesanan" class="form-control" required>
-                            </div>
+                            </div><br>
 
                             <button type="submit" class="btn btn-success">SIMPAN</button>
                             <button type="reset" class="btn btn-warning">RESET</button>

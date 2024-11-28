@@ -26,8 +26,8 @@
                                 foreach ($users as $user): ?>
                                     <tr>
                                         <td><?= $no++ ?></td>
-                                        <td><?= htmlspecialchars($user['tanaman_yang_dipesan']) ?></td>
-                                        <td><?= htmlspecialchars($user['pembeli']) ?></td>
+                                        <td><?= htmlspecialchars($user['nama_tanaman']) ?></td>
+                                        <td><?= htmlspecialchars($user['nama']) ?></td>
                                         <td><?= htmlspecialchars($user['status_pesanan']) ?></td>
                                         <td class="text-center">
                                             <a href="/orders/edit/<?php echo $user['id_orders']; ?>" class="btn btn-sm btn-warning">Edit</a>
