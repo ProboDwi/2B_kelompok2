@@ -29,7 +29,7 @@
                                     <tr>
                                         <td><?= $no++ ?></td>
                                         <td><?= htmlspecialchars($user['nama_tanaman']); ?></td>
-                                        <td><?= htmlspecialchars($user['kategori']); ?></td>
+                                        <td><?= htmlspecialchars($user['nama_kategori']); ?></td>
                                         <td><?= htmlspecialchars($user['deskripsi']); ?></td>
                                         <td><?= htmlspecialchars($user['harga']); ?></td>
                                         <td><?= htmlspecialchars($user['penjual']); ?></td>
