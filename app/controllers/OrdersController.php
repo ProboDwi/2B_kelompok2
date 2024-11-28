@@ -16,6 +16,8 @@ class OrdersController {
     }
 
     public function create() {
+        $plants = $this->userModel->getAllPlants(); // Ambil data kategori
+        $users = $this->userModel->getUsers(); // Ambil data Users
         require_once '../app/views/orders/create.php';
     }
 
@@ -29,11 +31,18 @@ class OrdersController {
     // Show the edit form with the user data
     public function edit($id) {
         $user = $this->userModel->find($id); // Assume find() gets user by ID
+        $plants = $this->userModel->getAllPlants(); // Ambil data kategori
+        $users = $this->userModel->getUsers(); // Ambil data Users
         require_once __DIR__ . '/../views/orders/edit.php';
     }
 
-    // Process the update request
-    public function update($id, $data) {
+    public function update($id) {
+        $data = [
+            'id_plants' => $_POST['tanaman_yang_dipesan'], 
+            'id_users' => $_POST['pembeli'],
+            'status_pesanan' => $_POST['status_pesanan'],
+        ];
+
         $updated = $this->userModel->update($id, $data);
         if ($updated) {
             header("Location: /orders/index"); // Redirect to user list
@@ -41,6 +50,16 @@ class OrdersController {
             echo "Failed to update user.";
         }
     }
+
+    // Process the update request
+    // public function update($id, $data) {
+    //     $updated = $this->userModel->update($id, $data);
+    //     if ($updated) {
+    //         header("Location: /orders/index"); // Redirect to user list
+    //     } else {
+    //         echo "Failed to update user.";
+    //     }
+    // }
 
     // Process delete request
     public function delete($id) {
@@ -51,4 +70,5 @@ class OrdersController {
             echo "Failed to delete user.";
         }
     }
+
 }

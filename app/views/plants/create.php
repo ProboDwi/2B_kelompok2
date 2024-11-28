@@ -16,12 +16,17 @@
 
                         <div class="form-group">
                             <label for="kategori">Kategori</label>
-                            <input type="text" name="kategori" id="kategori" class="form-control" required>
-                        </div>
+                                <div>
+                                    <select id="kategori" name="kategori" style="width: 100%" required>
+                                    <option value="" selected disabled>Pilih Kategori</option>
 
-                        <div class="form-group">
-                            <label for="deskripsi">Deskripsi</label>
-                            <input type="text" name="deskripsi" id="deskripsi" class="form-control" required>
+                                        <?php foreach ($kategori as $data): ?>
+                                            <option value="<?= htmlspecialchars($data['id_categories']) ?>">
+                                                <?= htmlspecialchars($data['nama_kategori']) ?>
+                                            </option>
+                                        <?php endforeach; ?>
+                                    </select><br><br>
+                                </div>
                         </div>
 
                         <div class="form-group">
