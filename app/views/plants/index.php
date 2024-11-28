@@ -23,21 +23,27 @@
                         </thead>
                         <tbody>
                             <?php 
-                            $no = 1;
-                            foreach ($users as $user): ?>
+                            if (!empty($users)) {
+                                $no = 1;
+                                foreach ($users as $user): ?>
+                                    <tr>
+                                        <td><?= $no++ ?></td>
+                                        <td><?= htmlspecialchars($user['nama_tanaman']); ?></td>
+                                        <td><?= htmlspecialchars($user['kategori']); ?></td>
+                                        <td><?= htmlspecialchars($user['deskripsi']); ?></td>
+                                        <td><?= htmlspecialchars($user['harga']); ?></td>
+                                        <td><?= htmlspecialchars($user['penjual']); ?></td>
+                                        <td class="text-center">
+                                            <a href="/plants/edit/<?php echo $user['id_plants']; ?>" class="btn btn-sm btn-warning">Edit</a>
+                                            <a href="/plants/delete/<?php echo $user['id_plants']; ?>" onclick="return confirm('Are you sure?')" class="btn btn-sm btn-danger">Delete</a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            <?php } else { ?>
                                 <tr>
-                                    <td><?= $no++ ?></td>
-                                    <td><?= htmlspecialchars($user['nama_tanaman']) ?></td>
-                                    <td><?= htmlspecialchars($user['kategori']) ?></td>
-                                    <td><?= htmlspecialchars($user['deskripsi']) ?></td>
-                                    <td><?= htmlspecialchars($user['harga']) ?></td>
-                                    <td><?= htmlspecialchars($user['penjual']) ?></td>
-                                    <td class="text-center">
-                                        <a href="/plants/edit/<?php echo $user['id_plants']; ?>" class="btn btn-sm btn-warning">Edit</a>
-                                        <a href="/plants/delete/<?php echo $user['id_plants']; ?>" onclick="return confirm('Are you sure?')" class="btn btn-sm btn-danger">Delete</a>
-                                    </td>
+                                    <td colspan="7" class="text-center">Tidak ada data tanaman</td>
                                 </tr>
-                            <?php endforeach; ?>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>
