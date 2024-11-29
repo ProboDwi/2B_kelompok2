@@ -26,14 +26,14 @@ elseif ($url == '/categories/index' || $url == '/') {
 } elseif ($url == '/categories/store' && $requestMethod == 'POST') {
     $categoriescontroller->store();
 } elseif (preg_match('/\/categories\/edit\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
-    $userId = $matches[1];
-    $categoriescontroller->edit($userId);
+    $categoriesId = $matches[1];
+    $categoriescontroller->edit($categoriesId);
 } elseif (preg_match('/\/categories\/update\/(\d+)/', $url, $matches) && $requestMethod == 'POST') {
-    $userId = $matches[1];
-    $categoriescontroller->update($userId, $_POST);
+    $categoriesId = $matches[1];
+    $categoriescontroller->update($categoriesId, $_POST);
 } elseif (preg_match('/\/categories\/delete\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
-    $userId = $matches[1];
-    $categoriescontroller->delete($userId);
+    $categoriesId = $matches[1];
+    $categoriescontroller->delete($categoriesId);
 }
 
   elseif ($url == '/orders/index' || $url == '/') {
