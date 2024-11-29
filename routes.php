@@ -43,14 +43,14 @@ elseif ($url == '/categories/index' || $url == '/') {
 } elseif ($url == '/orders/store' && $requestMethod == 'POST') {
     $orderscontroller->store();
 } elseif (preg_match('/\/orders\/edit\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
-    $userId = $matches[1];
-    $orderscontroller->edit($userId);
+    $ordersId = $matches[1];
+    $orderscontroller->edit($ordersId);
 } elseif (preg_match('/\/orders\/update\/(\d+)/', $url, $matches) && $requestMethod == 'POST') {
-    $userId = $matches[1];
-    $orderscontroller->update($userId, $_POST);
+    $ordersId = $matches[1];
+    $orderscontroller->update($ordersId, $_POST);
 } elseif (preg_match('/\/orders\/delete\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
-    $userId = $matches[1];
-    $orderscontroller->delete($userId);
+    $ordersId = $matches[1];
+    $orderscontroller->delete($ordersId);
 }
 
   elseif ($url == '/plants/index' || $url == '/') {
@@ -60,14 +60,14 @@ elseif ($url == '/categories/index' || $url == '/') {
 } elseif ($url == '/plants/store' && $requestMethod == 'POST') {
     $plantscontroller->store();
 } elseif (preg_match('/\/plants\/edit\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
-    $userId = $matches[1];
-    $plantscontroller->edit($userId);
+    $plantsId = $matches[1];
+    $plantscontroller->edit($plantsId);
 } elseif (preg_match('/\/plants\/update\/(\d+)/', $url, $matches) && $requestMethod == 'POST') {
-    $userId = $matches[1];
-    $plantscontroller->update($userId, $_POST);
+    $plantsId = $matches[1];
+    $plantscontroller->update($plantsId, $_POST);
 } elseif (preg_match('/\/plants\/delete\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
-    $userId = $matches[1];
-    $plantscontroller->delete($userId);
+    $plantsId = $matches[1];
+    $plantscontroller->delete($plantsId);
 } 
 
 
