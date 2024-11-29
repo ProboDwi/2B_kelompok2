@@ -1,12 +1,12 @@
 <?php require_once '../public/library/header.php'; ?>
 <?php require_once '../public/library/navbar.php'; ?>
 
-<h2 style="text-align: center; margin: 20px">Kategori Pengguna</h2>
+<h2 style="text-align: center; margin: 20px">Kategori Tanaman</h2>
 <div class="container" style="margin-top: 40px">
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Kategori Pengguna</div>
+                <div class="card-header">Kategori Tanaman</div>
                     <div class="card-body">
                         <a href="/categories/create" class="btn btn-md btn-success" style="margin-bottom: 10px">Tambah Kategori Baru</a>
                         <table class="table table-bordered" id="myTable">
